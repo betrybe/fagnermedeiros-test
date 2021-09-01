@@ -1,0 +1,47 @@
+{
+  "name": "sd-0x-project-cookmaster-v2",
+  "version": "1.0.0",
+  "description": "Você já usa o GitHub diariamente para desenvolver os exercícios, certo? Agora, para desenvolver os projetos, você deverá seguir as instruções a seguir. Fique atento a cada passo, e se tiver qualquer dúvida, nos envie por Slack! #vqv 🚀",
+  "main": "./src/api/server.js",
+  "scripts": {
+    "test": "jest --runInBand --detectOpenHandles --forceExit",
+    "start": "node .",
+    "dev": "nodemon .",
+    "dev:test": "mocha ./src/integration-tests/**/*$NAME*.{test,spec}.js --exit",
+    "dev:test:coverage": "nyc --all npm run dev:test",
+    "dev:test:coverage:json": "nyc --all --reporter=json-summary npm run dev:test",
+    "lint": "eslint --no-inline-config --ext .js,.jsx --no-error-on-unmatched-pattern -c .eslintrc.json ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tryber/sd-0x-cookmaster-v2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tryber/sd-0x-cookmaster-v2/issues"
+  },
+  "homepage": "https://github.com/tryber/sd-0x-cookmaster-v2#readme",
+  "dependencies": {
+    "body-parser": "1.19.0",
+    "dotenv": "8.2.0",
+    "express": "4.17.1",
+    "express-rescue": "1.1.30",
+    "frisby": "2.1.2",
+    "jest": "26.4.1",
+    "jsonwebtoken": "8.5.1",
+    "mongodb": "3.5.9",
+    "multer": "1.4.2",
+    "nodemon": "2.0.4",
+    "shelljs": "0.8.4"
+  },
+  "devDependencies": {
+    "chai": "4.3.4",
+    "chai-http": "4.3.0",
+    "eslint-config-trybe-backend": "^1.0.4",
+    "mocha": "9.0.0",
+    "nyc": "15.1.0",
+    "sinon": "11.1.1"
+  }
+}

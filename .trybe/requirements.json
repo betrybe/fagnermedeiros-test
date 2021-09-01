@@ -1,0 +1,60 @@
+{
+  "requirements": [
+    {
+      "description": "1 - Crie um endpoint para o cadastro de usuários",
+      "bonus": false
+    },
+    {
+      "description": "2 - Crie um endpoint para o login de usuários",
+      "bonus": false
+    },
+    {
+      "description": "3 - Crie um endpoint para o cadastro de receitas",
+      "bonus": false
+    },
+    {
+      "description": "4 - Crie um endpoint para a listagem de receitas",
+      "bonus": false
+    },
+    {
+      "description": "5 - Crie um endpoint para visualizar uma receita específica",
+      "bonus": false
+    },
+    {
+      "description": "6 - Crie uma query em mongo que insira uma pessoa usuária com permissões de admin",
+      "bonus": false
+    },
+    {
+      "description": "7 - Crie um endpoint para a edição de uma receita",
+      "bonus": false
+    },
+    {
+      "description": "8 - Crie um endpoint para a exclusão de uma receita",
+      "bonus": false
+    },
+    {
+      "description": "9 - Crie um endpoint para a adição de uma imagem a uma receita",
+      "bonus": false
+    },
+    {
+      "description": "10 - Crie um endpoint para acessar a imagem de uma receita",
+      "bonus": false
+    },
+    {
+      "description": "11 - Crie testes de integração que cubram no mínimo 30 porcento dos arquivos em src com um mínimo de 50 linhas cobertas",
+      "bonus": false
+    },
+    {
+      "description": "12 - Crie um endpoint para cadastro de pessoas administradoras",
+      "bonus": true
+    },
+    {
+      "description": "13 - Crie testes de integração que cubram no mínimo 60 porcento dos arquivos em src com um mínimo de 100 linhas cobertas",
+      "bonus": true
+    },
+    {
+      "description": "14 - Crie testes de integração que cubram no mínimo 90 porcento dos arquivos em src com um mínimo de 150 linhas cobertas",
+      "bonus": true
+    }
+  ]
+}
