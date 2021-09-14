@@ -5,6 +5,7 @@ const CreateRecipeService = require('../services/CreateRecipeService');
 const ListRecipesService = require('../services/ListRecipeService');
 const ShowRecipeService = require('../services/ShowRecipeService');
 const UpdateRecipeService = require('../services/UpdateRecipeService');
+const DeleteRecipeService = require('../services/DeleteRecipeService');
 
 class RecipesController {
   static async create(request, response) {
@@ -49,6 +50,14 @@ class RecipesController {
     const recipe = await UpdateRecipeService.execute({ name, ingredients, preparation, recipeId });
 
     return response.json(recipe);
+  }
+
+  static async delete(request, response) {
+    const recipeId = request.params.id;
+
+    await DeleteRecipeService.execute(recipeId);
+
+    return response.status(204).send();
   }
 }
 
