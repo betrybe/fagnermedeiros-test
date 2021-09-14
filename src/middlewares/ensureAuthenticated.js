@@ -7,7 +7,7 @@ function ensureAuthenticated(request, response, next) {
   const token = request.headers.authorization;
 
   if (!token) {
-    throw new AppError('jwt malformed', 401);
+    throw new AppError('missing auth token', 401);
   }
 
   try {

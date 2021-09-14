@@ -4,6 +4,7 @@ const AppError = require('../errors/AppError');
 const CreateRecipeService = require('../services/CreateRecipeService');
 const ListRecipesService = require('../services/ListRecipeService');
 const ShowRecipeService = require('../services/ShowRecipeService');
+const UpdateRecipeService = require('../services/UpdateRecipeService');
 
 class RecipesController {
   static async create(request, response) {
@@ -37,6 +38,15 @@ class RecipesController {
     const recipeId = request.params.id;
 
     const recipe = await ShowRecipeService.execute(recipeId);
+
+    return response.json(recipe);
+  }
+
+  static async update(request, response) {
+    const recipeId = request.params.id;
+    const { name, ingredients, preparation } = request.body;
+
+    const recipe = await UpdateRecipeService.execute({ name, ingredients, preparation, recipeId });
 
     return response.json(recipe);
   }
