@@ -6,5 +6,6 @@ const ensureAuthenticated = require('../middlewares/ensureAuthenticated');
 const recipesRouter = Router();
 
 recipesRouter.post('/', ensureAuthenticated, RecipesController.create);
+recipesRouter.get('/', RecipesController.index);
 
 module.exports = recipesRouter;
