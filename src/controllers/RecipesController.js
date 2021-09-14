@@ -3,6 +3,7 @@ const Joi = require('joi');
 const AppError = require('../errors/AppError');
 const CreateRecipeService = require('../services/CreateRecipeService');
 const ListRecipesService = require('../services/ListRecipeService');
+const ShowRecipeService = require('../services/ShowRecipeService');
 
 class RecipesController {
   static async create(request, response) {
@@ -30,6 +31,14 @@ class RecipesController {
     const recipes = await ListRecipesService.execute();
 
     return response.json(recipes);
+  }
+
+  static async show(request, response) {
+    const recipeId = request.params.id;
+
+    const recipe = await ShowRecipeService.execute(recipeId);
+
+    return response.json(recipe);
   }
 }
 
