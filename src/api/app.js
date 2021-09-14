@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 require('express-async-errors');
 
 const routes = require('../routes');
@@ -14,6 +15,7 @@ app.get('/', (request, response) => {
 // Não remover esse end-point, ele é necessário para o avaliador
 
 app.use(express.json());
+app.use('/images', express.static(path.join(__dirname, '..', 'uploads')));
 app.use(routes);
 
 app.use((err, request, response, _) => {
