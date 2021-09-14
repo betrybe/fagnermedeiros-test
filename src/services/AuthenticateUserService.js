@@ -20,9 +20,9 @@ class AuthenticateUserService {
 
     const { secret, expiresIn } = authConfig.jwt;
 
+    const { _id } = user;
     const token = sign({
-      // eslint-disable-next-line no-underscore-dangle
-      id: user._id.toString(),
+      id: _id.toString(),
       role: user.role,
       email: user.email,
     }, secret, {
