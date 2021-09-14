@@ -8,18 +8,19 @@ async function permission(request, response, next) {
   const { id: userId, role } = request.user;
 
   const isValid = isValidObjectId(recipeId);
+
   if (!isValid) {
     throw new AppError('Recipe not found', 404);
   }
 
   const recipe = await Recipe.findById(recipeId);
-  
+
   if (!recipe) {
     throw new AppError('Recipe not found', 404);
   }
-  
+
   const isRecipeLoggedUser = userId === recipe.userId.toString();
-  
+
   if (isRecipeLoggedUser || role === 'admin') {
     next();
   } else {
