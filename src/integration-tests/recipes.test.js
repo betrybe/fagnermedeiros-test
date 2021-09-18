@@ -14,7 +14,7 @@ const app = require('../api/app');
 chai.should();
 chai.use(chaiHttp);
 
-const MONGO_DB_URL = 'mongodb://localhost:27017';
+const MONGO_DB_URL = 'mongodb://mongodb:27017';
 const DB_NAME = 'Cookmaster';
 
 describe('Create recipe', () => {
