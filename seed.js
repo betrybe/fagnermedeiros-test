@@ -8,14 +8,11 @@ const mongoDbUrl = 'mongodb://localhost:27017/Cookmaster';
     useUnifiedTopology: true,
   });
 
-  const db = connection.db('Cookmaster');
+  const db = {
+    users: connection.db('Cookmaster').collection('users'),
+  }
 
-  await db.collection('users').insertOne({
-    name: 'admin',
-    email: 'root@email.com',
-    password: '123456',
-    role: 'admin',
-  });
+  await db.users.insertOne({ name: 'admin', email: 'root@email.com', password: 'admin', role: 'admin' });
 
   process.exit();
 })();
