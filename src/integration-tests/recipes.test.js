@@ -1,20 +1,16 @@
 const fs = require('fs');
-const { join, resolve } = require('path');
+const { resolve } = require('path');
 const { expect } = require('chai');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const { connection, connect } = require('mongoose');
-
-require('dotenv').config({
-  path: join(__dirname, '..', '..', '.env.test'),
-});
 
 const app = require('../api/app');
 
 chai.should();
 chai.use(chaiHttp);
 
-const MONGO_DB_URL = 'mongodb://mongodb:27017';
+const MONGO_DB_URL = 'mongodb://localhost:27017';
 const DB_NAME = 'Cookmaster';
 
 describe('Create recipe', () => {
