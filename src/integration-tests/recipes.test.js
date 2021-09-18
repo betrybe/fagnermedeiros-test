@@ -14,9 +14,12 @@ const app = require('../api/app');
 chai.should();
 chai.use(chaiHttp);
 
+const MONGO_DB_URL = 'mongodb://localhost:27017';
+const DB_NAME = 'Cookmaster';
+
 describe('Create recipe', () => {
   before(done => {
-    connect(`${process.env.MONGO_DB_URL}/${process.env.DB_NAME}`)
+    connect(`${MONGO_DB_URL}/${DB_NAME}`)
       .then(() => done())
       .catch((err) => done(err));
   });
@@ -174,7 +177,7 @@ describe('Create recipe', () => {
 
 describe('List recipes', () => {
   before(done => {
-    connect(`${process.env.MONGO_DB_URL}/${process.env.DB_NAME}`)
+    connect(`${MONGO_DB_URL}/${DB_NAME}`)
       .then(() => done())
       .catch((err) => done(err));
   });
@@ -269,7 +272,7 @@ describe('Show recipe', () => {
   let recipeId;
 
   before(done => {
-    connect(`${process.env.MONGO_DB_URL}/${process.env.DB_NAME}`)
+    connect(`${MONGO_DB_URL}/${DB_NAME}`)
       .then(() => done())
       .catch((err) => done(err));
   });
@@ -363,7 +366,7 @@ describe('Update recipe', () => {
   let recipeId;
 
   before(done => {
-    connect(`${process.env.MONGO_DB_URL}/${process.env.DB_NAME}`)
+    connect(`${MONGO_DB_URL}/${DB_NAME}`)
       .then(() => done())
       .catch((err) => done(err));
   });
@@ -555,7 +558,7 @@ describe('Delete recipe', () => {
   let recipeId;
 
   before(done => {
-    connect(`${process.env.MONGO_DB_URL}/${process.env.DB_NAME}`)
+    connect(`${MONGO_DB_URL}/${DB_NAME}`)
       .then(() => done())
       .catch((err) => done(err));
   });
@@ -699,7 +702,7 @@ describe('Create image in recipe', () => {
   let recipeId;
 
   before(done => {
-    connect(`${process.env.MONGO_DB_URL}/${process.env.DB_NAME}`)
+    connect(`${MONGO_DB_URL}/${DB_NAME}`)
       .then(() => done())
       .catch((err) => done(err));
   });
