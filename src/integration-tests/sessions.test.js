@@ -21,10 +21,14 @@ describe('Create session', () => {
   beforeEach(async () => {
     Object.keys(connection.collections).forEach(async key => {
       await connection.collections[key].deleteMany({});
-     });
+    });
   });
 
   after(done => {
+    Object.keys(connection.collections).forEach(async key => {
+      await connection.collections[key].deleteMany({});
+    });
+
     connection.close()
       .then(() => done())
       .catch(err => done(err));

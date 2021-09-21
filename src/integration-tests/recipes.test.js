@@ -23,7 +23,7 @@ describe('Create recipe', () => {
   beforeEach(async () => {
     Object.keys(connection.collections).forEach(async key => {
       await connection.collections[key].deleteMany({});
-     });
+    });
 
      await connection.collection('users').insertOne({
         name: 'Test',
@@ -33,6 +33,10 @@ describe('Create recipe', () => {
   });
 
   after(done => {
+    Object.keys(connection.collections).forEach(async key => {
+      await connection.collections[key].deleteMany({});
+    });
+
     connection.close()
       .then(() => done())
       .catch(err => done(err));
